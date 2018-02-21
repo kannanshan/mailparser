@@ -23,9 +23,16 @@ class MainHandler(tornado.web.RequestHandler):
         	json_response["Success"] = False
         	self.write(json_response)
 
+    def get(self):
+        json_response = {}
+        json_response["Success"] = True
+        self.write(json_response)
+
+
 def make_app():
     return tornado.web.Application([
-        (r"/mail/parser", MainHandler),
+        (r"/mail/parser/", MainHandler),
+        (r"/", MainHandler),
     ])
 
 if __name__ == "__main__":
