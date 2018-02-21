@@ -3,6 +3,7 @@ import tornado.web
 import json
 import talon
 from talon import quotations
+from tornado.options import define, options
 
 class MainHandler(tornado.web.RequestHandler):
     def post(self):
@@ -28,6 +29,8 @@ def make_app():
     ])
 
 if __name__ == "__main__":
+    define("port", default="8080", help="Port")
+    tornado.options.parse_command_line()
     app = make_app()
-    app.listen(8888)
+    app.listen(options.port)
     tornado.ioloop.IOLoop.current().start()
