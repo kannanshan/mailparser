@@ -15,8 +15,8 @@ class MainHandler(tornado.web.RequestHandler):
     		content = input_data["content"]
     		reply = quotations.extract_from(content, data_type)
     		json_response["Success"]=True
-    		#json_response["content"]=reply
-    		json_response["position"]=len(reply)-1
+    		json_response["Content"]=reply
+    		#json_response["position"]=len(reply)-1
     		self.write(json_response)
         except Exception,e:
         	print e

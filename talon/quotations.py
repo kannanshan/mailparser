@@ -456,8 +456,8 @@ def _extract_from_html(msg_body):
                       html_quotations.cut_zimbra_quote(html_tree) or
                       html_quotations.cut_blockquote(html_tree) or
                       html_quotations.cut_microsoft_quote(html_tree) or
-                      html_quotations.cut_by_id(html_tree) or
-                      html_quotations.cut_from_block(html_tree)
+                      html_quotations.cut_by_id(html_tree) 
+                      #html_quotations.cut_from_block(html_tree)
                       )
     html_tree_copy = deepcopy(html_tree)
 
