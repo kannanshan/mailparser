@@ -202,7 +202,6 @@ def extract_from(msg_body, content_type='text/plain'):
         if content_type == 'text/plain':
             return extract_from_plain(msg_body)
         elif content_type == 'text/html':
-            print "kannan-html"
             return extract_from_html(msg_body)
     except Exception:
         log.exception('ERROR extracting message')
@@ -257,9 +256,9 @@ def mark_message_lines(lines):
 
                 # skip splitter lines
                 i += len(splitter_lines) - 1
-            else:
+            #else:
                 # probably the line from the last message in the conversation
-                markers[i] = 't'
+                #markers[i] = 't'
         i += 1
 
     return ''.join(markers)
@@ -390,7 +389,6 @@ def extract_from_plain(msg_body):
     lines = msg_body.splitlines()[:MAX_LINES_COUNT]
     markers = mark_message_lines(lines)
     lines = process_marked_lines(lines, markers)
-
     # concatenate lines, change links back, strip and return
     msg_body = delimiter.join(lines)
     msg_body = postprocess(msg_body)
@@ -451,22 +449,21 @@ def _extract_from_html(msg_body):
 
     if html_tree is None:
         return msg_body
-
     cut_quotations = (html_quotations.cut_gmail_quote(html_tree) or
+                      #html_quotations.cut_gmail_extra(html_tree) or
                       html_quotations.cut_zimbra_quote(html_tree) or
                       html_quotations.cut_blockquote(html_tree) or
                       html_quotations.cut_microsoft_quote(html_tree) or
-                      html_quotations.cut_by_id(html_tree) 
+                      html_quotations.cut_by_id(html_tree) or
+                      html_quotations.cut_yahoo_quoted(html_tree)
                       #html_quotations.cut_from_block(html_tree)
                       )
     html_tree_copy = deepcopy(html_tree)
-
     number_of_checkpoints = html_quotations.add_checkpoint(html_tree, 0)
     quotation_checkpoints = [False] * number_of_checkpoints
     plain_text = html_tree_to_text(html_tree)
     plain_text = preprocess(plain_text, '\n', content_type='text/html')
     lines = plain_text.splitlines()
-
     # Don't process too long messages
     if len(lines) > MAX_LINES_COUNT:
         return msg_body
@@ -476,11 +473,9 @@ def _extract_from_html(msg_body):
         [int(i[4:-4])  # Only checkpoint number
          for i in re.findall(html_quotations.CHECKPOINT_PATTERN, line)]
         for line in lines]
-
     # Remove checkpoints
     lines = [re.sub(html_quotations.CHECKPOINT_PATTERN, '', line)
              for line in lines]
-
     # Use plain text quotation extracting algorithm
     markers = mark_message_lines(lines)
     return_flags = []
@@ -489,7 +484,6 @@ def _extract_from_html(msg_body):
 
     if not lines_were_deleted and not cut_quotations:
         return msg_body
-
     if lines_were_deleted:
         #collect checkpoints from deleted lines
         for i in range(first_deleted, last_deleted):
@@ -503,7 +497,6 @@ def _extract_from_html(msg_body):
 
     if _readable_text_empty(html_tree_copy):
         return msg_body
-
     return html.tostring(html_tree_copy)
 
 
