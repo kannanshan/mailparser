@@ -256,9 +256,9 @@ def mark_message_lines(lines):
 
                 # skip splitter lines
                 i += len(splitter_lines) - 1
-            #else:
+            else:
                 # probably the line from the last message in the conversation
-                #markers[i] = 't'
+                markers[i] = 't'
         i += 1
 
     return ''.join(markers)

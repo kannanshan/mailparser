@@ -82,9 +82,9 @@ def cut_gmail_quote(html_message):
     gmail_quote = cssselect('div.gmail_quote', html_message)
     if gmail_quote and (gmail_quote[0].text is None or not RE_FWD.match(gmail_quote[0].text)):
         gmail_quote[0].getparent().remove(gmail_quote[0])
-    gmail_quote = cssselect('div.gmail_extra', html_message)
-    if gmail_quote and (gmail_quote[0].text is None or not RE_FWD.match(gmail_quote[0].text)):
-        gmail_quote[0].getparent().remove(gmail_quote[0])
+    #gmail_quote = cssselect('div.gmail_extra', html_message)
+    #if gmail_quote and (gmail_quote[0].text is None or not RE_FWD.match(gmail_quote[0].text)):
+     #   gmail_quote[0].getparent().remove(gmail_quote[0])
         return True
 
 def cut_gmail_extra(html_message):
