@@ -11,7 +11,7 @@ class InstallCommand(install):
     boolean_options = install.boolean_options + ['no-ml']
 
     def initialize_options(self):
-      print "Test"
+        print "Test"
         install.initialize_options(self)
         self.no_ml = None
 
