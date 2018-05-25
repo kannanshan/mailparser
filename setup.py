@@ -4,7 +4,6 @@ from setuptools.command.install import install
 
 
 class InstallCommand(install):
-    print "Test"
     user_options = install.user_options + [
         ('no-ml', None, "Don't install without Machine Learning modules."),
     ]
@@ -12,7 +11,6 @@ class InstallCommand(install):
     boolean_options = install.boolean_options + ['no-ml']
 
     def initialize_options(self):
-        print "Test"
         install.initialize_options(self)
         self.no_ml = None
 
