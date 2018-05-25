@@ -17,6 +17,6 @@ html =html+"</div></body></html>"
 #reply = quotations.extract_from(html, 'text/html')
 #reply = quotations.extract_from_html(html)
 # reply == "<html><body><p>Reply</p></body></html>"
-print html
-print len(reply)
+#print html
+#print len(reply)
 print len(html)
