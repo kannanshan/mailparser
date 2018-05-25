@@ -4,6 +4,7 @@ from setuptools.command.install import install
 
 
 class InstallCommand(install):
+    print "Test"
     user_options = install.user_options + [
         ('no-ml', None, "Don't install without Machine Learning modules."),
     ]
