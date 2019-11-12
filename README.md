@@ -36,21 +36,22 @@ The locations are specified using the latitude and longitude.
 
 1. Input the Distance range and the source coordinates in lat,long. 
 		The input is read from the file named input.txt and outputs are written to the file named outputs.txt
-		**java -jar distancecalculator.jar -d 100 -s 53.339428 -6.257664**
+>**java -jar distancecalculator.jar -d 100 -s 53.339428 -6.257664**
 		
 2. If you want to change the input via command line interface use the below command. 
 		Default is vis files.
-		**java -jar distancecalculator.jar -d 100 -s 53.339428 -6.257664 -i command_line -o file**
+>**java -jar distancecalculator.jar -d 100 -s 53.339428 -6.257664 -i command_line -o file**
 		
 3. If you want to change the sort order using the name or distance from the source use the below command. 
 		Default is using the id.
-		**java -jar distancecalculator.jar -d 100 -s 53.339428 -6.257664 -i command_line -o file -sp name -so asc**
+>**java -jar distancecalculator.jar -d 100 -s 53.339428 -6.257664 -i command_line -o file -sp name -so asc**
 		
 4. If you want to change the working directory use the below command. 
 		Default is the current directory.
-		**java -jar distancecalculator.jar -d 100 -s 53.339428 -6.257664 -i command_line -o file -sp name -so asc -w /Users/Kannan/Desktop**
+>**java -jar distancecalculator.jar -d 100 -s 53.339428 -6.257664 -i command_line -o file -sp name -so asc -w /Users/Kannan/Desktop**
 		
 ## Help : 
+'''
  		usage: java -jar distancecalculator.jar (-h help)  (-d distance range in km) (-s latitude longitude) (-w working directory) (-so sorting order asc or desc) (-sp sorting parameter id or name or dis) (-i inputtype file or command_line) (-o outputtype file or command_line)
  
 -d  : *Distance range to be measured. The values are in Kilometers. data type : double 
@@ -62,6 +63,7 @@ The locations are specified using the latitude and longitude.
 -o  : Output type. file or command_line. data type : String . Default value : File
  
 -* : Mandatory Parameters 
+'''
  
 		
 		
