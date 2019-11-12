@@ -53,13 +53,13 @@ The locations are specified using the latitude and longitude.
 ## Help : 
 
  * usage: java -jar distancecalculator.jar (-h help)  (-d distance range in km) (-s latitude longitude) (-w working directory) (-so sorting order asc or desc) (-sp sorting parameter id or name or dis) (-i inputtype file or command_line) (-o outputtype file or command_line)
- * d  : *Distance range to be measured. The values are in Kilometers. data type : double 
- * s  : *Source coordinates. The source is generally provided using latitude and longtidue in degrees. data type : double 
- * w  : Working directory.data type : String . Default value : Current directory
- * so : Sorting order. asc or desc. data type : String . Default value : Ascending
- * sp : Sorting parameter. id or name or dis (distance from source). data type : String . Default Value : user_id
- * i  : Input type. file or command_line. data type : String . Default value : File
- * o  : Output type. file or command_line. data type : String . Default value : File
+ 	* d  : *Distance range to be measured. The values are in Kilometers. data type : double 
+ 	* s  : *Source coordinates. The source is generally provided using latitude and longtidue in degrees. data type : double 
+ 	* w  : Working directory.data type : String . Default value : Current directory
+ 	* so : Sorting order. asc or desc. data type : String . Default value : Ascending
+	* sp : Sorting parameter. id or name or dis (distance from source). data type : String . Default Value : user_id
+ 	* i  : Input type. file or command_line. data type : String . Default value : File
+ 	* o  : Output type. file or command_line. data type : String . Default value : File
  
  * Distance range and source coordinates are  Mandatory Parameters 
 
