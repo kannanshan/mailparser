@@ -51,19 +51,18 @@ The locations are specified using the latitude and longitude.
 >**java -jar distancecalculator.jar -d 100 -s 53.339428 -6.257664 -i command_line -o file -sp name -so asc -w /Users/Kannan/Desktop**
 		
 ## Help : 
-'''
+
  		- usage: java -jar distancecalculator.jar (-h help)  (-d distance range in km) (-s latitude longitude) (-w working directory) (-so sorting order asc or desc) (-sp sorting parameter id or name or dis) (-i inputtype file or command_line) (-o outputtype file or command_line)
+ 	- d  : *Distance range to be measured. The values are in Kilometers. data type : double 
+	- s  : *Source coordinates. The source is generally provided using latitude and longtidue in degrees. data type : double 
+	- w  : Working directory.data type : String . Default value : Current directory
+	- so : Sorting order. asc or desc. data type : String . Default value : Ascending
+	- sp : Sorting parameter. id or name or dis (distance from source). data type : String . Default Value : user_id
+	- i  : Input type. file or command_line. data type : String . Default value : File
+	- o  : Output type. file or command_line. data type : String . Default value : File
  
-			- d  : *Distance range to be measured. The values are in Kilometers. data type : double 
-			- s  : *Source coordinates. The source is generally provided using latitude and longtidue in degrees. data type : double 
-			- w  : Working directory.data type : String . Default value : Current directory
-			- so : Sorting order. asc or desc. data type : String . Default value : Ascending
-			- sp : Sorting parameter. id or name or dis (distance from source). data type : String . Default Value : user_id
-			- i  : Input type. file or command_line. data type : String . Default value : File
-			- o  : Output type. file or command_line. data type : String . Default value : File
- 
-			- * : Mandatory Parameters 
-'''
+- * : Mandatory Parameters 
+
  
 		
 		
