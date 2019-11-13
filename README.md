@@ -75,8 +75,8 @@ The locations are specified using the latitude and longitude.
 
 ### Missing data : 
 1. Missing Distance.
-		Input : java -jar target/distancecalculator.jar -s 53.339428 -6.257664
-		Output : Invalid input. -d  parameter is missing or the range is < 0 or > 10000: check the help menu using the -h command to understand the inputs
+* Input : java -jar target/distancecalculator.jar -s 53.339428 -6.257664
+* Output : Invalid input. -d  parameter is missing or the range is < 0 or > 10000: check the help menu using the -h command to understand the inputs
 
 2. Missing source cordinates.
 		Input : java -jar target/distancecalculator.jar -d 100
