@@ -108,8 +108,14 @@ The locations are specified using the latitude and longitude.
 
 inputs.txt file : 
 		{"latitude": "52.986375", "user_id": 12, "name": "Christina McArdle", "longitude": "-8.522366"}
+		
+		
 		{"latitude": "51.92893", "user_id": 1, "name": "Alice Cahill", "longitude": "-10.27699"}
+		
+		
 		{"latitude": "52.986375", "user_id": 2, "name": "Ian McArdle", "longitude": "-6.043701"}
+		
+		
 		{"latitude": "53.807778", "user_id": 3, "name": "Jack Enright", "longitude": "-7.714444"}
 
 1. Success case. 
