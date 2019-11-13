@@ -1,4 +1,3 @@
-
 # DistanceCalculator
 
 ## Description :
@@ -74,7 +73,7 @@ The locations are specified using the latitude and longitude.
  
 ## Test case inputs and outputs
 
-###Missing data : 
+### Missing data : 
 1. Missing Distance.
 		Input : java -jar target/distancecalculator.jar -s 53.339428 -6.257664
 		Output : Invalid input. -d  parameter is missing or the range is < 0 or > 10000: check the help menu using the -h command to understand the inputs
@@ -88,10 +87,10 @@ The locations are specified using the latitude and longitude.
 		Output : Input file not found. Please check the working directory and the file with name input.txt
 
 
-###Invalid data : 
+### Invalid data : 
 1. Invalid json data in file.
-		Input : java -jar target/distancecalculator.jar -d 100 -s 53.339428 -6.257664
-		Output : Invalid customer data format. Please make sure the inputs are in proper json format. Please find the sample: "{"latitude": "52.986375", 		"user_id": 12, "name": "Christina McArdle", "longitude": "-6.043701"}"
+		* Input : java -jar target/distancecalculator.jar -d 100 -s 53.339428 -6.257664
+		* Output : Invalid customer data format. Please make sure the inputs are in proper json format. Please find the sample: "{"latitude": "52.986375", 		"user_id": 12, "name": "Christina McArdle", "longitude": "-6.043701"}"
 
 2. Improper parameter names.
 		Input : java -jar target/distancecalculator.jar -d 100 -s 53.339428 -6.257664
@@ -105,7 +104,7 @@ The locations are specified using the latitude and longitude.
 		Input : java -jar target/distancecalculator.jar -d 10000 -s 153.339428 -6.257664	
 		Output : Latitude value should be in the range -90 to 90
 
-###Success case :
+### Success case :
 
 inputs.txt file : 
 		{"latitude": "52.986375", "user_id": 12, "name": "Christina McArdle", "longitude": "-8.522366"} 161.35
