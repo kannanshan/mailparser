@@ -79,74 +79,74 @@ The locations are specified using the latitude and longitude.
 	* Output : Invalid input. -d  parameter is missing or the range is < 0 or > 10000: check the help menu using the -h command to understand the inputs
 
 2. Missing source cordinates.
-		Input : java -jar target/distancecalculator.jar -d 100
-		Output : Invalid input. -s parameter is missing : check the help menu using the -h command to understand the inputs
+	* Input : java -jar target/distancecalculator.jar -d 100
+	* Output : Invalid input. -s parameter is missing : check the help menu using the -h command to understand the inputs
 	
 3. File not found.
-		Input : java -jar target/distancecalculator.jar -d 100 -s 53.339428 -6.257664
-		Output : Input file not found. Please check the working directory and the file with name input.txt
+	* Input : java -jar target/distancecalculator.jar -d 100 -s 53.339428 -6.257664
+	* Output : Input file not found. Please check the working directory and the file with name input.txt
 
 
 ### Invalid data : 
 1. Invalid json data in file.
-		* Input : java -jar target/distancecalculator.jar -d 100 -s 53.339428 -6.257664
-		* Output : Invalid customer data format. Please make sure the inputs are in proper json format. Please find the sample: "{"latitude": "52.986375", 		"user_id": 12, "name": "Christina McArdle", "longitude": "-6.043701"}"
+	* Input : java -jar target/distancecalculator.jar -d 100 -s 53.339428 -6.257664
+	* Output : Invalid customer data format. Please make sure the inputs are in proper json format. Please find the sample: "{"latitude": "52.986375", 		"user_id": 12, "name": "Christina McArdle", "longitude": "-6.043701"}"
 
 2. Improper parameter names.
-		Input : java -jar target/distancecalculator.jar -d 100 -s 53.339428 -6.257664
-		Output : Invalid customer data format. Please make sure the inputs are in proper json format. Please find the sample: "{"latitude": "52.986375", 		"user_id": 12, "name": "Christina McArdle", "longitude": "-6.043701"}"
+	* Input : java -jar target/distancecalculator.jar -d 100 -s 53.339428 -6.257664
+	* Output : Invalid customer data format. Please make sure the inputs are in proper json format. Please find the sample: "{"latitude": "52.986375", 		"user_id": 12, "name": "Christina McArdle", "longitude": "-6.043701"}"
 
 3. Distance should be less than 10000 km
-		Input : java -jar target/distancecalculator.jar -d 10000 -s 53.339428 -6.257664
-		Output : Invalid input. -d  parameter is missing or the range is < 0 or > 10000: check the help menu using the -h command to understand the inputs
+	* Input : java -jar target/distancecalculator.jar -d 10000 -s 53.339428 -6.257664
+	* Output : Invalid input. -d  parameter is missing or the range is < 0 or > 10000: check the help menu using the -h command to understand the inputs
 
 4. Lat/Long value between the perimissible range
-		Input : java -jar target/distancecalculator.jar -d 10000 -s 153.339428 -6.257664	
-		Output : Latitude value should be in the range -90 to 90
+	* Input : java -jar target/distancecalculator.jar -d 10000 -s 153.339428 -6.257664	
+	* Output : Latitude value should be in the range -90 to 90
 
 ### Success case :
 
 inputs.txt file : 
-		{"latitude": "52.986375", "user_id": 12, "name": "Christina McArdle", "longitude": "-8.522366"} 161.35
-		{"latitude": "51.92893", "user_id": 1, "name": "Alice Cahill", "longitude": "-10.27699"} 313.25
-		{"latitude": "52.986375", "user_id": 2, "name": "Ian McArdle", "longitude": "-6.043701"} 41.76
-		{"latitude": "53.807778", "user_id": 3, "name": "Jack Enright", "longitude": "-7.714444"} 109.38
+		{"latitude": "52.986375", "user_id": 12, "name": "Christina McArdle", "longitude": "-8.522366"}
+		{"latitude": "51.92893", "user_id": 1, "name": "Alice Cahill", "longitude": "-10.27699"}
+		{"latitude": "52.986375", "user_id": 2, "name": "Ian McArdle", "longitude": "-6.043701"}
+		{"latitude": "53.807778", "user_id": 3, "name": "Jack Enright", "longitude": "-7.714444"}
 
 1. Success case. 
-		Input : java -jar target/distancecalculator.jar -d 100 -s 53.339428 -6.257664
-		Output : { "name" : "Ian McArdle", "user_id" : 2 }
+	* Input : java -jar target/distancecalculator.jar -d 100 -s 53.339428 -6.257664
+	* Output : { "name" : "Ian McArdle", "user_id" : 2 }
 
 2. Empty results.
-		Input : java -jar target/distancecalculator.jar -d 10 -s 53.339428 -6.257664
-		Output : {}
+	* Input : java -jar target/distancecalculator.jar -d 10 -s 53.339428 -6.257664
+	* Output : {}
 
 3. Empty results.
-		Input : java -jar target/distancecalculator.jar -d 1000 -s 53.339428 -6.257664
-		Output : {}
+	* Input : java -jar target/distancecalculator.jar -d 1000 -s 53.339428 -6.257664
+	* Output : {}
 
 4. Sort the outputs based on the  user id : ascending order
-		Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664
-		Output : {"user_id":2, "name":Ian McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":12, "name":Christina McArdle"}
+	* Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664
+	* Output : {"user_id":2, "name":Ian McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":12, "name":Christina McArdle"}
 
 5. Sort the outputs based on the  user id : descending order	
-		Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -so desc
-		Output : {"user_id":12, "name":Christina McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":2, "name":Ian McArdle"}
+	* Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -so desc
+	* Output : {"user_id":12, "name":Christina McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":2, "name":Ian McArdle"}
 
 6. Sort the outputs based on the  user name : ascending order	
-		Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -sp name -so asc
-		Output : {"user_id":12, "name":Christina McArdle"} {"user_id":2, "name":Ian McArdle"} {"user_id":3, "name":Jack Enright"}
+	* Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -sp name -so asc
+	* Output : {"user_id":12, "name":Christina McArdle"} {"user_id":2, "name":Ian McArdle"} {"user_id":3, "name":Jack Enright"}
 
 7. Sort the outputs based on the distance from the source : ascending order	
-		Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -so desc -sp dist
-		Output : {"user_id":12, "name":Christina McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":2, "name":Ian McArdle"}
+	* Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -so desc -sp dist
+	* Output : {"user_id":12, "name":Christina McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":2, "name":Ian McArdle"}
 
 8. Output the results in Command line. 
-	   Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -o command_line
-	   Output : {"user_id":2, "name":Ian McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":12, "name":Christina McArdle"}
+	* Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -o command_line
+	* Output : {"user_id":2, "name":Ian McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":12, "name":Christina McArdle"}
 	   
 9. Input from Command line and output to file. 
-	   Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -o command_line -i file
-	   Output : {"user_id":2, "name":Ian McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":12, "name":Christina McArdle"}
+	* Input : java -jar target/distancecalculator.jar -d 200 -s 53.339428 -6.257664 -o command_line -i file
+	* Output : {"user_id":2, "name":Ian McArdle"} {"user_id":3, "name":Jack Enright"} {"user_id":12, "name":Christina McArdle"}
  
 
  
